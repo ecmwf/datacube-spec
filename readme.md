@@ -15,7 +15,7 @@ Any of these can be represented in four principle formats:
 * YAML
 * URL query string
 
-Different service interfaces require the MARS language to be represented in certains ways. This repository aims to provide a definitive specification of the format syntax, and tools to perform validation and translation consistently.
+Different service interfaces require the MARS language to be represented in certains ways. This repository aims to provide a definitive specification of the syntax, and tools to perform validation and translation consistently.
 
 # Datacubes
 
@@ -33,6 +33,8 @@ A datacube is a multidimensional dataset, where individual objects are described
 > [!TIP]
 > This specification does not dictate the names of axes (e.g. "class") or their indexes (e.g. "operational"), it just describes the syntax.
 
+## Datacube Properties
+
 We consider a datacube to have the following properties:
 
 * A datacube can be represented as a tree of sub-datacubes
@@ -45,6 +47,7 @@ We consider a datacube to have the following properties:
 
   This means that the datacube does not have the same **dimensionality** in all directions. Different sub-datacubes can have a different number of dimensions. For example, the sub-datacube selected by `stream: forecast` has a `step` axis, but the sub-datacube selected by `stream: analysis` may not have that axis at all.
 
+## Axis Properties
 
 There are several types of axis within a datacube, which are handled differently within the MARS language specification:
 
