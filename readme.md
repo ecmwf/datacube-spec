@@ -51,15 +51,15 @@ We consider a datacube to have the following properties:
 
 There are several types of axis within a datacube, which are handled differently within the MARS language specification:
 
-* Measurable Axes
+* **Measurable Axes**
 
   An axis where it makes physical sense to express a range of values. This usually implies some kind of spatio-temporal axis. It is possible to query for a range of indexes across a measurable axis.
 
-* Countable Axes
+* **Countable Axes**
 
   An axis which is not physically measurable, but can be ordered and numbered using natural numbers. For example, in an ensemble weather forecast, N simultaneous forecasts are executed and stored in a datacube and indexed on a countable axis (`number: 1, 2, ... 50`). Countable axes behave similarly to measurable axes and range queries are possible across a countable axis.
 
-* Unordered Axes
+* **Unordered Axes**
 
   An axis which cannot be ordered in a scientifically-meaningful way, such that it is not possible to express a range of values. In the above example, `class`, `stream` and `parameter` are all unordered axes.
 
