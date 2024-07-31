@@ -43,11 +43,11 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
 * **Irregularity and Sparsity:**
   
-  Datacubes may exhibit variability in the length of their axes. For instance, a sub-datacube filtered by date: 2023-01-10 might have a step axis extending to 240, whereas one filtered by date: 2023-01-11 might extend to 360. Additionally, these axes can be sparse, meaning they do not necessarily include every sequential index (e.g., 0, 2, 4, 6, ... 240).
+  Datacubes may exhibit variability in the length of their axes. For instance, a sub-datacube filtered by `date: 2023-01-10` might have a step axis extending to `240`, whereas one filtered by `date: 2023-01-11` might extend to `360`. Additionally, these axes can be sparse, meaning they do not necessarily include every sequential index (e.g., `0, 2, 4, 6, ... 240`).
 
 * **Branching**
 
-  The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the stream: forecast category might include a step axis, while one under stream: analysis might not,
+  The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the `stream: forecast` category might include a step axis, while one under `stream: analysis` might not.
 
 ## Axis Properties
 
