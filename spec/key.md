@@ -4,10 +4,12 @@ A key is fundamentally a dictionary describing the coordinates of a datacube whi
 
 ## Examples
 
-```MARS Native
+**MARS Native**
+```
 class=operations,stream=forecast,date=2024-01-01,parameter=t,step=1
 ```
 
+**JSON**
 ```JSON
 {
     "class": "operations",
@@ -18,6 +20,7 @@ class=operations,stream=forecast,date=2024-01-01,parameter=t,step=1
 }
 ```
 
+**YAML**
 ```YAML
 class: operations,
 stream: forecast,
@@ -25,6 +28,7 @@ date: 2024-01-01,
 parameter: t
 ```
 
-```URL Query
+**URL Query**
+```
 class=operations&stream=forecast&date=2024-01-01&parameter=t&step=1
 ```
