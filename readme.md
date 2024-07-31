@@ -65,5 +65,7 @@ Within a datacube, axes are categorized into several types, each handled distinc
 
   An axis which cannot be ordered in a scientifically-meaningful way, such that it is not possible to express a range of values. In the above example, `class`, `stream` and `parameter` are all unordered axes. These axes are primarily for categorical distinctions within the data.
 
-A **request** may include other key-value pairs in its associated key or query, which are non-indexing axes. See the full specification.
+A **request** may include other key-value pairs in its associated key or query, which are non-indexing axes.
+
+See the full [specification](./spec/spec.md).
   
