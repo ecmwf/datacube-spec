@@ -13,6 +13,7 @@ class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=
 * Ranges are specified as `start/to/end`, or optionally with a step as `start/to/end/by/step`.
 * Lists of values are specified as `item1/item2/item3`
 * Individual values can be specified just as in a [key](key.md)
+* A query is indistinguishable from a key if all the values are simple individual values.
 
 **JSON**
 ```JSON
@@ -33,7 +34,7 @@ class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=
 * Individual values can be specified just as in a [key](key.md), or as a single-value list.
 * It is also valid to use MARS-like syntax for ranges and lists:
     * `"date": "20240101/to/20240103"`
-
+* A query is indistinguishable from a key if all the values are simple individual values.
 
 **YAML**
 ```YAML
@@ -54,5 +55,5 @@ step:
 
 **URL Query**
 ```
-class=operations&stream=forecast&date=2024-01-01/2024-01-03&parameter=t,p,q&step=1-30-2
+class=operations&stream=forecast&date=(2024-01-01,2024-01-03)&parameter=(t,p,q)&step=(from=1,to=30,step=2)
 ```

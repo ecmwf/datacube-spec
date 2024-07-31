@@ -1,3 +1,6 @@
+- rename Key to something else
+- rename whole repository datacube-langauge or datacube-spec
+
 
 This repository serves as the definitive source for the MARS language syntax specification, along with tools for parsing and translating MARS keys, queries, and requests. The MARS language is broadly a language designed for indexing multi-dimensional datacubes.
 
