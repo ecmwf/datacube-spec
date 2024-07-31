@@ -19,7 +19,7 @@ class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=
 {
     "class": "operations",
     "stream": ["forecast"],
-    "date": ["2024-01-01", "20240103"],
+    "date": ["2024-01-01", "2024-01-03"],
     "parameter": ["t", "p", "q"],
     "step": {
         "start": 1,
