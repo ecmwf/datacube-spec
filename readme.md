@@ -1,5 +1,5 @@
 
-This repository holds the specification for the MARS language syntax as well as multi-language tools for parsing and translating MARS keys, queries and requests. More broadly, it is a specification for a language which describes indexing of multi-dimensional datacubes.
+This repository serves as the definitive source for the MARS language syntax specification, along with tools for parsing and translating MARS keys, queries, and requests. The MARS language is broadly a language designed for indexing multi-dimensional datacubes.
 
 # Introduction
 
@@ -9,17 +9,17 @@ The MARS language contains three core objects:
 * A **query** is a span of keys for describing a set of objects
 * A **request** is a query or key, plus a **verb** specifying an action to be taken on those objects
 
-Any of these can be represented in four principle formats:
-* The MARS native format
+These objects can be expressed in any of the following four principal formats:
+* MARS native format
 * JSON
 * YAML
 * URL query string
 
-Different service interfaces require the MARS language to be represented in certains ways. This repository aims to provide a definitive specification of the syntax, and tools to perform validation and translation consistently.
+Due to varying requirements across different service interfaces and protocols, the MARS language must be represented in multiple formats. This repository provides a comprehensive specification of the MARS syntax in different formats, and includes tools for consistent validation and translation of the language.
 
 # Datacubes
 
-A datacube is a multidimensional dataset, where individual objects are described by specifying a dictionary of metadata describing their location on different axes. For example, a key describing a specific object in a meteorological datacube specifies a location on each axis:
+A datacube is a multidimensional dataset, characterized by individual objects each defined by a set of metadata. This metadata acts as coordinates, specifying the object's position across various axes of the datacube. For instance, within a meteorological datacube, a key might define an object's location using the following axes:
 
 ```json
 {
@@ -31,25 +31,27 @@ A datacube is a multidimensional dataset, where individual objects are described
 }
 ```
 > [!TIP]
-> This specification does not dictate the names of axes (e.g. "class") or their indexes (e.g. "operational"), it just describes the syntax.
+> This specification addresses the syntax and does not prescribe specific vocabulary for axis names (e.g., "class") or their values (e.g., "operational"). The selection of appropriate vocabulary is domain-specific and falls under the responsibility of the user or their data governance protocols.
 
 ## Datacube Properties
 
-We consider a datacube to have the following properties:
+There are many intepretations of a datacube. For the purposes of this specification we recognize the following characteristics as intrinsic to datacubes:
 
-* A datacube can be represented as a tree of sub-datacubes
+* **Hierarchical Structur:e**
 
-* Datacubes can be irregular or sparse:
+  A datacube can be conceptualized as a tree of sub-datacubes.
+
+* **Irregularity and Sparsity:**
   
-  They do not have the same **length** in all directions. For example, the sub-datacube selected by `date: 2023-01-10` may have a `step` axis of length 240 whereas the sub-datacube selected by `date: 2023-01-11` may have a `step` axis of length 360. In both cases, the `step` axis can also be sparse, such that it does not contain every index value `0, 2, 4, 6, ... 240`.
+  Datacubes may exhibit variability in the length of their axes. For instance, a sub-datacube filtered by date: 2023-01-10 might have a step axis extending to 240, whereas one filtered by date: 2023-01-11 might extend to 360. Additionally, these axes can be sparse, meaning they do not necessarily include every sequential index (e.g., 0, 2, 4, 6, ... 240).
 
-* Datacubes can branch:
+* **Branching**
 
-  This means that the datacube does not have the same **dimensionality** in all directions. Different sub-datacubes can have a different number of dimensions. For example, the sub-datacube selected by `stream: forecast` has a `step` axis, but the sub-datacube selected by `stream: analysis` may not have that axis at all.
+  The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the stream: forecast category might include a step axis, while one under stream: analysis might not,
 
 ## Axis Properties
 
-There are several types of axis within a datacube, which are handled differently within the MARS language specification:
+Within a datacube, axes are categorized into several types, each handled distinctively within the MARS language specification:
 
 * **Measurable Axes**
 
@@ -57,11 +59,11 @@ There are several types of axis within a datacube, which are handled differently
 
 * **Countable Axes**
 
-  An axis which is not physically measurable, but can be ordered and numbered using natural numbers. For example, in an ensemble weather forecast, N simultaneous forecasts are executed and stored in a datacube and indexed on a countable axis (`number: 1, 2, ... 50`). Countable axes behave similarly to measurable axes and range queries are possible across a countable axis.
+  An axis which is not physically measurable, but can be systematically ordered and numbered using natural numbers. For example, in an ensemble weather forecast, N simultaneous forecasts are executed and stored in a datacube and indexed on a countable axis (`number: 1, 2, ... 50`). Countable axes behave similarly to measurable axes and range queries are possible across a countable axis.
 
 * **Unordered Axes**
 
-  An axis which cannot be ordered in a scientifically-meaningful way, such that it is not possible to express a range of values. In the above example, `class`, `stream` and `parameter` are all unordered axes.
+  An axis which cannot be ordered in a scientifically-meaningful way, such that it is not possible to express a range of values. In the above example, `class`, `stream` and `parameter` are all unordered axes. These axes are primarily for categorical distinctions within the data.
 
 A **request** may include other key-value pairs in its associated key or query, which are non-indexing axes. See the full specification.
   
