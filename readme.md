@@ -67,5 +67,5 @@ Within a datacube, axes are categorized into several types, each handled distinc
 
 A **request** may include other key-value pairs in its associated key or query, which are non-indexing axes.
 
-See the full [specification](./spec/spec.md).
+See the full [specification](./spec/readme.md).
   
