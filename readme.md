@@ -37,7 +37,7 @@ A datacube is a multidimensional dataset, characterized by individual objects ea
 
 There are many intepretations of a datacube. For the purposes of this specification we recognize the following characteristics as intrinsic to datacubes:
 
-* **Hierarchical Structur:e**
+* **Hierarchical Structure:**
 
   A datacube can be conceptualized as a tree of sub-datacubes.
 
