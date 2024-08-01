@@ -1,6 +1,6 @@
 
-# MARS Language Specficiation 
+# Datacube Specficiation
 
-* [Key](key.md)
+* [Path](path.md)
 * [Query](query.md)
 * [Request](request.md)

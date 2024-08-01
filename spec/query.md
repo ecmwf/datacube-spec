@@ -6,15 +6,6 @@ For each key-value pair, the key may be any string and the values must be a list
 
 ## Examples
 
-**MARS Native**
-```
-class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=1/to/30/by/2
-```
-* Ranges are specified as `start/to/end`, or optionally with a step as `start/to/end/by/step`.
-* Lists of values are specified as `item1/item2/item3`
-* Individual values can be specified just as in a [key](key.md)
-* A query is indistinguishable from a key if all the values are simple individual values.
-
 **JSON**
 ```JSON
 {
@@ -52,6 +43,15 @@ step:
 ```
 
 * All valid YAML formulations of the JSON specification are permitted.
+
+**MARS**
+```
+class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=1/to/30/by/2
+```
+* Ranges are specified as `start/to/end`, or optionally with a step as `start/to/end/by/step`.
+* Lists of values are specified as `item1/item2/item3`
+* Individual values can be specified just as in a [key](key.md)
+* A query is indistinguishable from a key if all the values are simple individual values.
 
 **URL Query**
 ```
