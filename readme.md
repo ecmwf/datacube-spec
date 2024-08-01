@@ -39,7 +39,7 @@ There are many intepretations of a datacube. For the purposes of this specificat
 }
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > This specification addresses the syntax and does not prescribe specific vocabulary for axis names (e.g., "class") or their values (e.g., "operational"). The selection of appropriate vocabulary is domain-specific and falls under the responsibility of the user or their data governance protocols.
 
 ### Hierarchical Structure
