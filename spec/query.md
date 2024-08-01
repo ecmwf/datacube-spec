@@ -1,6 +1,6 @@
 # Query
 
-A query is a dictionary-like object describing the ranges or sets coordinates, which point to multiple objects or sub-datacubes within a datacube.
+A query is a dictionary-like object describing the ranges or sets coordinates, which point to multiple elements or sub-datacubes within a datacube.
 
 For each key-value pair, the key may be any string and the values must be a list of values or ranges.
 
