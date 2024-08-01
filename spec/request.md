@@ -54,7 +54,7 @@ grid: [0.1, 0.1]
 retrieve,class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=1/to/30/by/2,target=foo.data,grid=0.1/0.1
 ```
 * The verb must be a string and prepends the query or identifier
-* Additional parameters may be a string or slash-separated list. For this reason, **not all requests can be represented in MARS format.**
+* Additional parameters may be a string or slash-separated list. **Requests which require dictionary parameters are not supported in MARS format.**
 
 **URL Query**
 ```

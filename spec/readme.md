@@ -21,3 +21,4 @@ The concepts are defined above, and their format-specific syntax is defined as f
 - [ ] Validity of over-specified requests
 - [ ] Reserved keywords
 - [ ] Define the allowable types (value, list, set) and how they are represented in each format
+- [ ] Can we represent dictionaries in MARS format?
