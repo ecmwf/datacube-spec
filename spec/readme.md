@@ -1,5 +1,5 @@
 
-# Datacube Specficiation
+# Datacube Specification
 
 The specification contains three core concepts:
 
