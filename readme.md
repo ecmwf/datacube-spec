@@ -37,7 +37,7 @@ There are many intepretations of a datacube. For the purposes of this specificat
 > [!IMPORTANT]
 > This specification addresses the syntax and does not prescribe specific vocabulary for axis names (e.g., "class") or their values (e.g., "operational"). The selection of appropriate vocabulary is domain-specific and falls under the responsibility of the user or their data governance protocols.
 
-* **Hierarchical Structure:**
+### Hierarchical Structure:
 
   A datacube can be conceptualized as a tree of lower-dimension datacubes.
 
@@ -47,11 +47,11 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
   New branches of the tree can be added (for example, if we wanted to add `parameter: pressure`) by simply increasing the length of a dimension.
 
-* **Irregularity and Sparsity:**
+### Irregularity and Sparsity:
   
   Datacubes may exhibit variability in the length of their axes. For instance, a sub-datacube filtered by `date: 2023-01-10` might have a step axis extending to `240`, whereas one filtered by `date: 2023-01-11` might extend to `360`. Additionally, these axes can be sparse, meaning they do not necessarily include every sequential index (e.g., `0, 2, 4, 6, ... 240`).
 
-* **Branching Dimensionality**
+### Branching Dimensionality
 
   The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the `stream: forecast` category might include a `step` axis, while one under `stream: analysis` might not.
 
@@ -64,15 +64,15 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
 Within a datacube, dimensions have axes which are categorized into several types, each handled distinctly within the datacube specification:
 
-* **Measurable Axes**
+### Measurable Axes
 
   Mathematically this means a dimension where you can measure a physical distance between any two points on an axis. Within a datacube, this is an axis where it makes physical sense to express a range of values. This usually implies some kind of spatio-temporal axis. It is possible to query for a range of coordinates across a measurable axis.
 
-* **Countable Axes**
+### Countable Axes
 
   An axis which is not physically measurable, but can be systematically ordered and numbered using natural numbers. For example, in an ensemble weather forecast, N simultaneous forecasts are executed and stored in a datacube and indexed on a countable axis (`number: 1, 2, ... 50`). Countable axes behave similarly to measurable axes and range queries are possible across a countable axis.
 
-* **Unordered Axes**
+### Unordered Axes
 
   An axis which cannot be ordered in a scientifically-meaningful way, such that it is not possible to express a range of values. In the above example, `class`, `stream` and `parameter` are all unordered axes. These axes are primarily for categorical distinctions within the data.
 
