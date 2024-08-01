@@ -22,10 +22,10 @@ For each key-value pair, the key may be any string and the values must be a list
 ```
 * Ranges are specified as a dictionary specifying the start, end and (optionally) step.
 * Lists of values are specified as a JSON list.
-* Individual values can be specified just as in a [key](key.md), or as a single-value list.
+* Individual values can be specified just as in a [identifier](identifier.md), or as a single-value list.
 * It is also valid to use MARS-like syntax for ranges and lists:
     * `"date": "20240101/to/20240103"`
-* A query is indistinguishable from a key if all the values are simple individual values.
+* A query is indistinguishable from an identifier if all the values are simple individual values.
 
 **YAML**
 ```YAML
@@ -50,8 +50,8 @@ class=operations,stream=forecast,date=20240101/to/20240103,parameter=t/p/q,step=
 ```
 * Ranges are specified as `start/to/end`, or optionally with a step as `start/to/end/by/step`.
 * Lists of values are specified as `item1/item2/item3`
-* Individual values can be specified just as in a [key](key.md)
-* A query is indistinguishable from a key if all the values are simple individual values.
+* Individual values can be specified just as in a [identifier](identifier.md)
+* A query is indistinguishable from a identifier if all the values are simple individual values.
 
 **URL Query**
 ```

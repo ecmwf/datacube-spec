@@ -8,8 +8,8 @@ This repository serves as the specification for the structure of datacubes, as w
 
 The syntax contains three core concepts:
 
-* A **path** is the description of a location in the datacube. This may be the coordinates of a specific element, or a sub-datacube.
-* A **query** is a span of paths for describing a set of elements, defined as ranges or sets on each dimension.
+* An **identifier** is the description of a location in the datacube. This may be the coordinates of a specific element, or a sub-datacube.
+* A **query** is a span of identifiers for describing a set of elements, defined as ranges or sets on each dimension.
 * A **request** is a query or key, plus a **verb** specifying an action to be taken on those elements
 
 These concepts can be expressed in any of the following four principal formats:
@@ -24,7 +24,7 @@ TODO: The specification is open to contributors who wish to add other formats or
 
 ## Datacube Properties
 
-There are many intepretations of a datacube. For the purposes of this specification we define the following characteristics as intrinsic to datacubes. It is helpful to describe these properties by example, so consider this **path** in a datacube designed for meteorological data:
+There are many intepretations of a datacube. For the purposes of this specification we define the following characteristics as intrinsic to datacubes. It is helpful to describe these properties by example, so consider this **identifier** in a datacube designed for meteorological data:
 
 ```json
 {
@@ -43,7 +43,7 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
   A datacube can be conceptualized as a tree of lower-dimension datacubes.
 
-  In our example, selecting from the original 5-dimensional datacube with the path `date: 2023-01-10` will yield a 4-dimensional datacube. If there are multiple dates in the datacube, there are many branches of the tree at this level.
+  In our example, selecting from the original 5-dimensional datacube with the identifier `date: 2023-01-10` will yield a 4-dimensional datacube. If there are multiple dates in the datacube, there are many branches of the tree at this level.
 
   Similarly, one can combine multiple datacubes by providing a new axis which distinguishes between them, thus creating a higher-dimension datacube and another level in the tree. For example, if the experiment that created our example datacube was performed at multiple resolutions, we can combine all of the output into a single datacube, by adding a new axis for `resolution`.
 
