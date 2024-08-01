@@ -1,16 +1,16 @@
 
 This repository serves as the specification document for the structure of datacubes, as well as the syntax specification for interactions with datacubes. It also provides tools for parsing and translating this syntax, to encourage consistent behaviour across software and services.
 
-> A datacube is a sparse, multi-dimensional array, consisting of individual objects each with a unique coordinate. The dimensions of the datacube have an implicit ordering. Navigating through a datacube by successively selecting coordinates on each axis reveals a tree-like structure, whereby each branch of the tree reveals a smaller sub-datacube, and the objects are the leaves of the tree.
+> A datacube is a sparse, multi-dimensional array, consisting of individual elements each with a unique coordinate. The dimensions of the datacube have an implicit ordering. Navigating through a datacube by successively selecting coordinates on each axis reveals a tree-like structure, whereby each branch of the tree reveals a smaller sub-datacube, and the elements are the leaves of the tree.
 
 
 # Introduction
 
-The specification contains three core concepts:
+The syntax contains three core concepts:
 
-* A **path** is the description of a location in the datacube. This may be the coordinates of a specific object, or a sub-datacube.
-* A **query** is a span of paths for describing a set of objects, defined as slices on each dimension.
-* A **request** is a query or key, plus a **verb** specifying an action to be taken on those objects
+* A **path** is the description of a location in the datacube. This may be the coordinates of a specific element, or a sub-datacube.
+* A **query** is a span of paths for describing a set of elements, defined as ranges or sets on each dimension.
+* A **request** is a query or key, plus a **verb** specifying an action to be taken on those elements
 
 These concepts can be expressed in any of the following four principal formats:
 * JSON
@@ -18,11 +18,11 @@ These concepts can be expressed in any of the following four principal formats:
 * MARS format
 * URL query string
 
-Due to varying requirements across different service interfaces and protocols, the datacube specification must be represented in multiple formats. This repository provides a the specification, and includes tools for consistent validation and translation of the syntax in different programming languages.
+Due to varying requirements across different service interfaces and protocols, the datacube specification must be represented in multiple formats. This repository provides the specification, and includes tools for consistent validation and translation of the syntax in different programming languages.
 
 ## Datacube Properties
 
-There are many intepretations of a datacube. For the purposes of this specification we define the following characteristics as intrinsic to datacubes. It is helpful to describe these properties by example, to this end consider this **path** in a datacube designed for meteorological data:
+There are many intepretations of a datacube. For the purposes of this specification we define the following characteristics as intrinsic to datacubes. It is helpful to describe these properties by example, so consider this **path** in a datacube designed for meteorological data:
 
 ```json
 {
@@ -42,7 +42,7 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
   In our example, selecting from the original 5-dimensional datacube with the path `date: 2023-01-10` will yield a 4-dimensional datacube. If there are multiple dates in the datacube, there are many branches of the tree at this level.
 
-  Similarly, one can combine multiple datacubes by providing a new axis which distinguishes between them, thus creating a higher-dimension datacube and another level in the tree. For example, if the experiment that created our example datacube was performed at multiple resolutions, we can combine all of the output on a new axis for `resolution`.
+  Similarly, one can combine multiple datacubes by providing a new axis which distinguishes between them, thus creating a higher-dimension datacube and another level in the tree. For example, if the experiment that created our example datacube was performed at multiple resolutions, we can combine all of the output into a single datacube, by adding a new axis for `resolution`.
 
   New branches of the tree can be added (for example, if we wanted to add `parameter: pressure`) by simply increasing the length of a dimension.
 
@@ -52,16 +52,16 @@ There are many intepretations of a datacube. For the purposes of this specificat
 
 * **Branching Dimensionality**
 
-  The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the `stream: forecast` category might include a step axis, while one under `stream: analysis` might not.
+  The dimensionality of sub-datacubes can vary. Different sub-datacubes may exhibit different numbers of dimensions depending on their data context. For example, a sub-datacube under the `stream: forecast` category might include a `step` axis, while one under `stream: analysis` might not.
 
   This means branches of the tree can be of different lengths, and it also means that we do not assume a datacube has a homogeneous dimensionality.
 
 > [!NOTE]
-> Some intepretations of a datacube would not allow this final property, which means that a combination of heterogeneous-dimension datacubes into a larger datacube is not possible. These intepretations then rely on a two-tier syntax to navigate the data, where part of the navigation is tree-like and part of the navigation is datacube-like. We find this intepretation less flexible and more complex.
+> Some intepretations of a datacube would not allow this final property, which means that a combination of heterogeneous-dimension datacubes into a larger datacube is not possible. These intepretations then rely on a two-tier syntax to navigate the data, where part of the navigation is tree-like and part of the navigation is datacube-like.
 
 ## Axis Properties
 
-Within a datacube, dimensions have axes which are categorized into several types, each handled distinctively within the datacube specification:
+Within a datacube, dimensions have axes which are categorized into several types, each handled distinctly within the datacube specification:
 
 * **Measurable Axes**
 
