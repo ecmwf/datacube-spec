@@ -1,7 +1,7 @@
 
 This repository serves as the specification document for the structure of datacubes, as well as the syntax specification for interactions with datacubes. It also provides tools for parsing and translating this syntax, to encourage consistent behaviour across software and services.
 
-> A datacube is a sparse n-D array, consisting of individual objects each with a unique n-dimensional coordinate. The dimensions of the datacube have an implicit ordering. Navigating through a datacube by successively selecting coordinates on each axis reveals a tree-like structure, whereby a datacube can be considered to be comprised of many smaller sub-datacubes.
+> A datacube is a sparse, multi-dimensional array, consisting of individual objects each with a unique coordinate. The dimensions of the datacube have an implicit ordering. Navigating through a datacube by successively selecting coordinates on each axis reveals a tree-like structure, whereby each branch of the tree reveals a smaller sub-datacube, and the objects are the leaves of the tree.
 
 
 # Introduction
