@@ -2,7 +2,7 @@
 
 A request is a combination of a **verb** describing an action and an [identifier](identifier.md) or [query](query.md) describing the subject of that action. A request may include other parameters beyond the datacube dimensions, which control the behaviour of the action.
 
-These verb and its parameters are not dictated by the Datacube Specification, but their syntax and encoding to different formats is.
+The verb name and its parameters are not dictated by the Datacube Specification, but their syntax and encoding to different formats is.
 
 ## Examples
 
