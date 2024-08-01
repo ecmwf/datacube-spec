@@ -20,3 +20,4 @@ The concepts are defined above, and their format-specific syntax is defined as f
 - [ ] Queries across branches with different dimensionality
 - [ ] Validity of over-specified requests
 - [ ] Reserved keywords
+- [ ] Define the allowable types (value, list, set) and how they are represented in each format
