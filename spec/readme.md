@@ -13,3 +13,10 @@ The concepts are defined above, and their format-specific syntax is defined as f
 * [YAML](formats/yaml.md)
 * [MARS](formats/mars.md)
 * [URL Query](formats/url-query.md)
+
+
+## TODO
+
+- [ ] Queries across branches with different dimensionality
+- [ ] Validity of over-specified requests
+- [ ] Reserved keywords
