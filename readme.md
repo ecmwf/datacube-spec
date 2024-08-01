@@ -15,7 +15,7 @@ The syntax contains three core concepts:
 These concepts can be expressed in any of the following four principal formats:
 * JSON
 * YAML
-* MARS format
+* MARS
 * URL query string
 
 Due to varying requirements across different service interfaces and protocols, the datacube specification must be represented in multiple formats. This repository provides the specification, and includes tools for consistent validation and translation of the syntax in different programming languages.
