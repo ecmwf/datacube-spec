@@ -20,6 +20,8 @@ These concepts can be expressed in any of the following four principal formats:
 
 Due to varying requirements across different service interfaces and protocols, the datacube specification must be represented in multiple formats. This repository provides the specification, and includes tools for consistent validation and translation of the syntax in different programming languages.
 
+TODO: The specification is open to contributors who wish to add other formats or tools for other languages. Domain-specific extensions are also possible.
+
 ## Datacube Properties
 
 There are many intepretations of a datacube. For the purposes of this specification we define the following characteristics as intrinsic to datacubes. It is helpful to describe these properties by example, so consider this **path** in a datacube designed for meteorological data:
