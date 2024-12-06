@@ -1,6 +1,5 @@
-> [!WARNING]
-> This specification is under development and not yet fully defined or reviewed.
-
+![Static Badge](https://img.shields.io/badge/Maturity-Incubating-violet)
+![Static Badge](https://img.shields.io/badge/ESEE-Foundation-orange)
 
 This repository serves as the specification for the conceptual structure of datacubes, as well as the syntax specification for interactions with datacubes. It also provides tools for parsing and translating this syntax, to encourage consistent behaviour across software and services.
 
