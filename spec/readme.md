@@ -4,7 +4,7 @@
 The specification contains three core concepts:
 
 * [Identifier](identifier.md)
-* [Query](query.md)
+* [selection](selection.md)
 * [Request](request.md)
 
 The concepts are defined above, and their format-specific syntax is defined as follows:

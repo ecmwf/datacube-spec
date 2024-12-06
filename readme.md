@@ -12,8 +12,8 @@ This repository serves as the specification for the conceptual structure of data
 The syntax contains three core concepts:
 
 * An **identifier** is the description of a location in the datacube. This may be the coordinates of a specific element, or a sub-datacube.
-* A **query** is a span of identifiers for describing a set of elements or sub-datacubes, defined as ranges or sets on each dimension.
-* A **request** is a query or key, plus a **verb** specifying an action to be taken on those elements
+* A **selection** is a span of identifiers for describing a set of elements or sub-datacubes, defined as ranges or sets on each dimension.
+* A **request** is a selection, plus a **verb** specifying an action to be taken on those elements
 
 These concepts can be expressed in any of the following four principal formats:
 * JSON
