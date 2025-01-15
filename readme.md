@@ -1,3 +1,10 @@
+
+> [!WARNING]
+> This project is under development and not yet feature complete or tested.
+
+> [!WARNING]
+> This project is BETA and will be experimental for the forseable future. Interfaces and functionality are likely to change, and the project itself may be scrapped. DO NOT use this software in any project/software that is operational.
+
 ![Static Badge](https://img.shields.io/badge/Maturity-Incubating-violet)
 ![Static Badge](https://img.shields.io/badge/ESEE-Foundation-orange)
 
