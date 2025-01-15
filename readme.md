@@ -1,3 +1,4 @@
+# Datacube Specification
 
 > [!WARNING]
 > This project is under development and not yet feature complete or tested.
@@ -13,7 +14,7 @@ This repository serves as the specification for the conceptual structure of data
 > A datacube is a sparse, multi-dimensional array, consisting of individual elements each with a unique coordinate. The dimensions of the datacube have an implicit ordering. Navigating through a datacube by successively selecting coordinates on each axis reveals a tree-like structure, whereby each branch of the tree reveals a smaller sub-datacube, and the elements are the leaves of the tree.
 
 
-# Introduction
+## Introduction
 
 The syntax contains three core concepts:
 
