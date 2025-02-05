@@ -1,13 +1,7 @@
 # Datacube Specification
 
-> [!WARNING]
-> This project is under development and not yet feature complete or tested.
-
-> [!WARNING]
-> This project is BETA and will be experimental for the forseable future. Interfaces and functionality are likely to change, and the project itself may be scrapped. DO NOT use this software in any project/software that is operational.
-
-![Static Badge](https://img.shields.io/badge/Maturity-Incubating-violet)
-![Static Badge](https://img.shields.io/badge/ESEE-Foundation-orange)
+[![Static Badge](https://github.com/ecmwf/codex/raw/refs/heads/main/Project%20Maturity/emerging_badge.svg)](https://github.com/ecmwf/codex/raw/refs/heads/main/Project%20Maturity)
+[![Static Badge](https://github.com/ecmwf/codex/raw/refs/heads/main/ESEE/foundation_badge.svg)](https://github.com/ecmwf/codex/raw/refs/heads/main/ESEE)
 
 This repository serves as the specification for the conceptual structure of datacubes, as well as the syntax specification for interactions with datacubes. It also provides tools for parsing and translating this syntax, to encourage consistent behaviour across software and services.
 
